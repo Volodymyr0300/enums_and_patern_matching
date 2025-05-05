@@ -1,46 +1,36 @@
 fn main() {
-    enum Message {
-        Quit,
-        Move { x: i32, y: i32 },
-        Write(String),
-        ChangeColor(i32, i32, i32),
+    enum Coin {
+        Penny,
+        Nickel,
+        Dime,
+        Quarter,
     }
     
-    struct QuitMessage; // unit struct
-    struct MoveMessage {
-        x: i32,
-        y: i32,
+    fn value_in_cents(coin: Coin) -> u8 {
+        match coin {
+            Coin::Penny => {
+                println!("Lucky penny!");
+                1
+            },
+            Coin::Nickel => {
+                println!("Lucky nickel!");
+                5
+            },
+            Coin::Dime => {
+                println!("Lucky dime!");
+                10
+            },
+            Coin::Quarter => {
+                println!("Lucky quarter!");
+                25
+            },
+        }   
+        
     }
-
-    struct WriteMessage(String); // tuple struct
-    struct ChangeColorMessage(i32, i32, i32); // tuple struct
-
-    
-    impl Message {
-        fn call(&self) {
-        // method body would be defined here
-        }
-        }
-        let m = Message::Write(String::from("hello"));
-        m.call();
-    
-    enum Option<T> {
-        Some(T),
-        None,
-    }
-
-    /* 
-    let some_number = Some(5);
-    let some_string = Some("a string");
-    let absent_number: Option<i32> = None;
-    */
-
-    /* 
-    let x: i8 = 5;
-    let y: Option<i8> = Some(5);
-    let sum = x + y;
-    */
-
-    
-
+    value_in_cents(Coin::Penny);
+    value_in_cents(Coin::Nickel);
+    value_in_cents(Coin::Dime);
+    value_in_cents(Coin::Quarter);
 }
+    
+
