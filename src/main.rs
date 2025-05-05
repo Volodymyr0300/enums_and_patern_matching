@@ -27,10 +27,11 @@ fn main() {
         }   
         
     }
+
+    
+
     value_in_cents(Coin::Penny);
     value_in_cents(Coin::Nickel);
     value_in_cents(Coin::Dime);
     value_in_cents(Coin::Quarter);
 }
-    
-
