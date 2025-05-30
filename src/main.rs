@@ -1,37 +1,12 @@
 fn main() {
-    enum Coin {
-        Penny,
-        Nickel,
-        Dime,
-        Quarter,
-    }
-    
-    fn value_in_cents(coin: Coin) -> u8 {
-        match coin {
-            Coin::Penny => {
-                println!("Lucky penny!");
-                1
-            },
-            Coin::Nickel => {
-                println!("Lucky nickel!");
-                5
-            },
-            Coin::Dime => {
-                println!("Lucky dime!");
-                10
-            },
-            Coin::Quarter => {
-                println!("Lucky quarter!");
-                25
-            },
-        }   
-        
-    }
+    fn plus_one(x: Option<i32>) -> Option<i32> {
+            match x {
+                None => None,
+                Some(i) => Some(i + 1),
+            }
+        }
 
-    
-
-    value_in_cents(Coin::Penny);
-    value_in_cents(Coin::Nickel);
-    value_in_cents(Coin::Dime);
-    value_in_cents(Coin::Quarter);
+        let five = Some(5);
+        let _six = plus_one(five);
+        let _none = plus_one(None);
 }
